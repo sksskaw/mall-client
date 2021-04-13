@@ -20,7 +20,7 @@ public class CartListController extends HttpServlet {
 	private CartDao cartDao;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//로그인 아니면 redirect
+		//로그인 검사
 		HttpSession session = request.getSession();
 		if(session.getAttribute("loginClient") == null) { //로그인 정보가 없으면 IndexController로 이동
 			response.sendRedirect(request.getContextPath()+"/IndexController");
