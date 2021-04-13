@@ -8,6 +8,7 @@
 <title>index</title>
 </head>
 <body>
+	<jsp:include page="/WEB-INF/view/inc/mainMenu.jsp"></jsp:include>
 	<h1>index</h1>
 	<%
 		List<Ebook> ebookList = (List<Ebook>)request.getAttribute("ebookList");

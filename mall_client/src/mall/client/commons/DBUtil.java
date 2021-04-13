@@ -4,12 +4,12 @@ import java.sql.*;
 
 public class DBUtil {
 
-	// 1. DB 연결 
+	// 1. DB �뿰寃� 
 	public Connection getConnection() {
 		Connection conn = null;
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/mall","root","378044");
+			conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/mall","root","root");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -17,7 +17,7 @@ public class DBUtil {
 		return conn;
 	}
 	
-	// 2. DB자원(conn, stmt, rs) 해제
+	// 2. DB�옄�썝(conn, stmt, rs) �빐�젣
 	public void close(ResultSet rs, PreparedStatement stmt, Connection conn) {
 		try {
 			rs.close();
