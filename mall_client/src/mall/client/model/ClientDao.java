@@ -7,6 +7,7 @@ import mall.client.vo.*;
 public class ClientDao {
 	private DBUtil dbutil;
 	
+	// 로그인 정보 가져오기
 	public Client login(Client client) {
 		this.dbutil = new DBUtil();
 		Client returnCLient = null;

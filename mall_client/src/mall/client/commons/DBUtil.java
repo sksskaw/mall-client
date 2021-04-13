@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class DBUtil {
 
-	// 1. DB �뿰寃� 
+	// 1. DB 연동
 	public Connection getConnection() {
 		Connection conn = null;
 		try {
@@ -17,7 +17,7 @@ public class DBUtil {
 		return conn;
 	}
 	
-	// 2. DB�옄�썝(conn, stmt, rs) �빐�젣
+	// 2. DB객체 (conn, stmt, rs) 해제
 	public void close(ResultSet rs, PreparedStatement stmt, Connection conn) {
 		try {
 			rs.close();

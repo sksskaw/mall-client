@@ -9,7 +9,7 @@ public class CartDao {
 	
 	private DBUtil dbutil;
 	
-	// ·Î±×ÀÎÇÑ °èÁ¤ÀÇ Àå¹Ù±¸´Ï ¸®½ºÆ® °¡Á®¿À±â
+	// í˜„ì¬ ë¡œê·¸ì¸ í•œ ê³„ì •ì˜ ì¥ë°”êµ¬ë‹ˆ ì •ë³´ ê°€ì ¸ì˜¤ê¸°
 	public List<Map<String, Object>> selectCartList(String clientMail){
 		List<Map<String, Object>> list = new ArrayList<>();
 		this.dbutil = new DBUtil();
@@ -18,10 +18,10 @@ public class CartDao {
 		ResultSet rs = null;
 		
 		try {
-			conn = this.dbutil.getConnection();											//inner join		  					  //inner join Á¶°Ç
+			conn = this.dbutil.getConnection();
 			String sql = "SELECT e.ebook_no, e.ebook_title, e.ebook_price, c.cart_date FROM cart c ,ebook e WHERE c.client_mail=? AND c.ebook_no = e.ebook_no";
 			stmt = conn.prepareStatement(sql);
-			stmt.setString(1, clientMail); // ÇöÀç ·Î±×ÀÎÇÑ °èÁ¤ mail
+			stmt.setString(1, clientMail); //ì„¸ì…˜ì—ì„œ ê°€ì ¸ì˜¨ clientMailê°’
 			rs = stmt.executeQuery();
 			
 			while(rs.next()) {

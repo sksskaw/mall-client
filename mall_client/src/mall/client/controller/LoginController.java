@@ -17,7 +17,7 @@ public class LoginController extends HttpServlet {
 	private ClientDao clientDao;
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//∑Œ±◊¿Œ ¿Ø»øº∫ ∞ÀªÁ
+		//Î°úÍ∑∏Ïù∏ Ïú†Ìö®ÏÑ± Í≤ÄÏÇ¨
 		HttpSession session = request.getSession();
 		if(session.getAttribute("loginClient") != null) {
 			response.sendRedirect(request.getContextPath()+"/IndexController");

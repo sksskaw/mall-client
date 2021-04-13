@@ -20,24 +20,24 @@ public class CartListController extends HttpServlet {
 	private CartDao cartDao;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//·Î±×ÀÎ °Ë»ç
+		//ë¡œê·¸ì¸ ê²€ì‚¬
 		HttpSession session = request.getSession();
-		if(session.getAttribute("loginClient") == null) { //·Î±×ÀÎ Á¤º¸°¡ ¾øÀ¸¸é IndexController·Î ÀÌµ¿
+		if(session.getAttribute("loginClient") == null) { //ë¡œê·¸ì¸ ì •ë³´ê°€ ì—†ìœ¼ë©´ IndexControllerë¡œ ì´ë™
 			response.sendRedirect(request.getContextPath()+"/IndexController");
 			return;
 		}
 		
-		// ÀÎÄÚµù ¼³Á¤
+		// ì¸ì½”ë”© ì„¤ì •
 		request.setCharacterEncoding("utf-8");
 		
-		// ¼¼¼Ç¿¡ ÀÖ´Â ·Î±×ÀÎÁ¤º¸(clientMail)À» Á®¿Â´Ù.
-		// ¸Ş¼Òµå ¿¡¼­ »ç¿ëÇÏ´Â ¸Å°³º¯¼ö¸¦ ³Ñ°ÜÁÖ±â À§ÇØ ÇÊ¿äÇÑ °ªÀ» °¡Á®¿Â´Ù.
+		// ì„¸ì…˜ì— ìˆëŠ” ë¡œê·¸ì¸ì •ë³´(clientMail)ì„ ì ¸ì˜¨ë‹¤.
+		// ë©”ì†Œë“œ ì—ì„œ ì‚¬ìš©í•˜ëŠ” ë§¤ê°œë³€ìˆ˜ë¥¼ ë„˜ê²¨ì£¼ê¸° ìœ„í•´ í•„ìš”í•œ ê°’ì„ ê°€ì ¸ì˜¨ë‹¤.
 		Client client = new Client();
 		client = (Client)session.getAttribute("loginClient");
 		String clientMail = client.getClientMail();
 		
 		
-		// dao È£Ãâ
+		// dao í˜¸ì¶œ
 		cartDao = new CartDao();
 		List<Map<String, Object>> cartList = cartDao.selectCartList(clientMail);
 		
