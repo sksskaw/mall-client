@@ -30,7 +30,7 @@ public class ClientDao {
 		} catch(Exception e){
 			e.printStackTrace();
 		} finally {
-			this.dbutil.close(null, stmt, conn);
+			this.dbutil.close(rs, stmt, conn);
 		}
 
 		return returnClientMail;
