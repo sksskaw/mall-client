@@ -24,6 +24,7 @@
 		<ul>
 			<li><a href="<%=request.getContextPath()%>/LogoutController">로그아웃</a></li>
 			<li><a href="<%=request.getContextPath()%>/SelectOneClientController">회원정보</a></li>
+			<li><a href="<%=request.getContextPath()%>/DeleteClientController">회원탈퇴</a></li>
 			<li><a href="<%=request.getContextPath()%>/CartListController">장바구니</a></li>
 		</ul>
 	</div>
