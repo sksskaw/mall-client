@@ -10,7 +10,7 @@
 	<h1>회원가입</h1>
 	<form action="<%=request.getContextPath()%>/InsertClientController" method="post">
 		<div> clientMail : 
-			<input type="text" name="clientMail" required="required">
+			<input type="email" name="clientMail" required="required">
 		</div>
 		
 		<div> clientPw : 
