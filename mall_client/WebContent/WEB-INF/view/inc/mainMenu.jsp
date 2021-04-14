@@ -10,6 +10,9 @@
 		PW : <input type="password" name="clientPw">
 		<button type="submit">로그인</button>
 	</form>
+	<ul>
+		<li><a href="<%=request.getContextPath()%>/InsertClientController">회원가입</a></li>
+	</ul>
 <%
 	} else{
 %>
@@ -20,6 +23,7 @@
 		</div>
 		<ul>
 			<li><a href="<%=request.getContextPath()%>/LogoutController">로그아웃</a></li>
+			<li><a href="<%=request.getContextPath()%>/SelectOneClientController">회원정보</a></li>
 			<li><a href="<%=request.getContextPath()%>/CartListController">장바구니</a></li>
 		</ul>
 	</div>

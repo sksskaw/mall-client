@@ -32,7 +32,7 @@ public class IndexController extends HttpServlet {
 		List<Ebook> ebookList = this.ebookDao.selectEbookListByPage(beginRow, rowPerPage);
 		
 		// View forward
-		request.setAttribute("ebookList", ebookList); // request?óê ebookList ?†ïÎ≥? ???û•
+		request.setAttribute("ebookList", ebookList); // requestÍ∞ùÏ≤¥Ïóê ebookList Ï†ïÎ≥¥ ÎÑ£Ïñ¥Ï£ºÍ∏∞
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/view/index.jsp");
 		rd.forward(request, response);
 	}
